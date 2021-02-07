@@ -1,14 +1,16 @@
 """Generate Markov text from text files."""
 
 import random
+import sys
 
-
-def open_and_read_file(file_path_1, file_path_2):
+def open_and_read_file(*argv):
     """Take file path as string; return text as string.
 
     Takes a string that is a file path, opens the file, and turns
     the file's contents as one string of text.
     """
+    file_path_1 = sys.argv[1]
+    file_path_2 = sys.argv[2]
 
     contents_1 = open(file_path_1).read()
     contents_1 = contents_1.rstrip().replace('\n',' ')
